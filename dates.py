@@ -1,7 +1,7 @@
 # Program that determines days between dates
 
 def isLeapYear(year):
-""" determines if year is a leap year according to wikipedia rules """
+#determines if year is a leap year according to wikipedia rules
     if year % 400 == 0:
         return True
     if year % 100 == 0:
@@ -12,7 +12,7 @@ def isLeapYear(year):
         return False
         
 def monthDays(month,year):
-""" 30 days hath september, april, june and november. To all the rest, 31. Except that stupid month February"""
+#30 days hath september, april, june and november. To all the rest, 31. Except that stupid month February
     if month in (4,6,9,11):
         days = 30
     else:
@@ -27,7 +27,7 @@ def monthDays(month,year):
 
 
 def nextDay(year,month,day):
-""" mechanically counts the next day """
+#mechanically counts the next day
     if day < monthDays(month,year):
         return year, month, day +1
     else:
@@ -38,7 +38,7 @@ def nextDay(year,month,day):
 
 
 def dateIsBefore(year1, month1, day1, year2, month2, day2):
-    """Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False."""
+#Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False.
     if year1 < year2:
         return True
     if year1 == year2:
@@ -49,9 +49,9 @@ def dateIsBefore(year1, month1, day1, year2, month2, day2):
     return False        
 
 def daysBetweenDates(year1, month1, day1, year2, month2, day2):
-    """Returns the number of days between year1/month1/day1
-       and year2/month2/day2. Assumes inputs are valid dates
-       in Gregorian calendar."""
+#Returns the number of days between year1/month1/day1
+#and year2/month2/day2. Assumes inputs are valid dates
+#in Gregorian calendar."""
     assert not dateIsBefore(year2, month2, day2, year1, month1, day1)
     days = 0
     while dateIsBefore(year1, month1, day1, year2, month2, day2):
